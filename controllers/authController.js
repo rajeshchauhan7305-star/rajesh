@@ -27,7 +27,14 @@ exports.register = async (req, res) => {
     res.redirect('/auth/login');
   } catch (error) {
     console.error(error);
-    res.status(500).render('error', { message: 'Registration failed.' });
+
+    if (error.code === 'ECONNREFUSED') {
+      req.session.error = 'Database connection failed. Start MySQL and verify your DB credentials.';
+      return res.redirect('/auth/register');
+    }
+
+    req.session.error = error.message || 'Registration failed.';
+    return res.redirect('/auth/register');
   }
 };
 

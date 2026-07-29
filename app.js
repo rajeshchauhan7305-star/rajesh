@@ -55,7 +55,22 @@ app.use((err, req, res, next) => {
   res.status(500).render('error', { message: err.message || 'Something went wrong.' });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`EduSubmit server is running at http://localhost:${port}`);
-});
+const requestedPort = Number(process.env.PORT) || 3000;
+
+const startServer = (port) => {
+  const server = app.listen(port, () => {
+    console.log(`EduSubmit server is running at http://localhost:${port}`);
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`Port ${port} is busy. Retrying on ${port + 1}...`);
+      startServer(port + 1);
+      return;
+    }
+
+    throw err;
+  });
+};
+
+startServer(requestedPort);
