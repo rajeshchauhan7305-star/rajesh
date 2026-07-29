@@ -1,0 +1,21 @@
+{
+  "name": "edusubmit",
+  "version": "1.0.0",
+  "description": "EduSubmit – Smart Assignment & Practical Submission Portal",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.1",
+    "express": "^4.21.1",
+    "express-session": "^1.1.2",
+    "express-validator": "^7.0.1",
+    "multer": "^2.0.0",
+    "mysql2": "^3.4.1",
+    "nodemon": "^3.1.0"
+  }
+}
