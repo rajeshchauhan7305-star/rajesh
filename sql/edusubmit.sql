@@ -36,9 +36,9 @@ CREATE TABLE submissions (
 );
 
 INSERT INTO users (name, email, password, role) VALUES
-('Admin One', 'admin@example.com', '$2b$10$lQfWpuY49uTK.9fukoozqewV6l.8eUxbG/VMtpVXGTg6dq3mn6lnK', 'admin'),
-('Teacher One', 'teacher@example.com', '$2b$10$7J9cWZy2jX5C6jcc4p8jXeqe4e2H3KzgAz59Xh3P9D3sALxYp8WPK', 'teacher'),
-('Student One', 'student@example.com', '$2b$10$7J9cWZy2jX5C6jcc4p8jXeqe4e2H3KzgAz59Xh3P9D3sALxYp8WPK', 'student');
+('Admin One', 'admin@example.com', '$2b$10$DLXxhG2h6o6O3jQyngaQqeMjIULnxixfUMiV4lIgyKrwNToWpZCG6', 'admin'),
+('Teacher One', 'teacher@example.com', '$2b$10$gQomKKaVq.0eddkdZul2puJJ2nt60i4WliH1Iabmo.zr2kVmDthX.', 'teacher'),
+('Student One', 'student@example.com', '$2b$10$BGDqgLJNH.woGHGBL497D.yccu07Ify.uvgbnteu7lt6VTqTudtmS', 'student');
 
 INSERT INTO assignments (subject_name, title, description, due_date, max_marks, created_by) VALUES
 ('Computer Science', 'DBMS Practical', 'Submit a practical assignment on SQL joins.', '2026-08-01', 50, 1),

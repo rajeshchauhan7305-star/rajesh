@@ -71,7 +71,10 @@ exports.login = async (req, res) => {
     res.redirect('/student/dashboard');
   } catch (error) {
     console.error(error);
-    res.status(500).render('error', { message: 'Login failed.' });
+    req.session.error = error.code === 'ECONNREFUSED'
+      ? 'Database connection failed. Please start MySQL and try again.'
+      : 'Login failed. Please try again.';
+    return res.redirect('/auth/login');
   }
 };
 

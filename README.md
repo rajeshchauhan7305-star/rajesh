@@ -31,6 +31,7 @@ EduSubmit is a modern assignment submission portal for students and teachers bui
    ```
 
 ## Default Credentials
+- Admin: admin@example.com / password123
 - Teacher: teacher@example.com / password123
 - Student: student@example.com / password123
 

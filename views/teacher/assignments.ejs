@@ -11,6 +11,31 @@
       <h2 class="mb-4">Assignments</h2>
       <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
       <% if (success) { %><div class="alert alert-success"><%= success %></div><% } %>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Add New Assignment</h5>
+          <form action="/teacher/assignments/create" method="post">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <input type="text" class="form-control" name="subject_name" placeholder="Subject Name" required />
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" name="title" placeholder="Assignment Title" required />
+              </div>
+              <div class="col-md-4">
+                <input type="date" class="form-control" name="due_date" required />
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" name="max_marks" placeholder="Maximum Marks" required />
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" name="description" placeholder="Short Description" required />
+              </div>
+            </div>
+            <button class="btn btn-success mt-3">Create Assignment</button>
+          </form>
+        </div>
+      </div>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -22,6 +47,11 @@
           </tr>
         </thead>
         <tbody>
+          <% if (assignments.length === 0) { %>
+            <tr>
+              <td colspan="5" class="text-center">No assignments yet. Add one above.</td>
+            </tr>
+          <% } %>
           <% assignments.forEach(function(assignment){ %>
             <tr>
               <td><%= assignment.subject_name %></td>
