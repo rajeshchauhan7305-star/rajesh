@@ -25,6 +25,8 @@ EduSubmit is a modern assignment submission portal for students and teachers bui
    mysql -u root -p < sql/edusubmit.sql
    ```
 4. Update the .env file with your MySQL credentials.
+   - If MySQL is running locally, set `DB_HOST=127.0.0.1` and `DB_PORT=3306`.
+   - If you see socket errors, try `DB_HOST=127.0.0.1` instead of `localhost`.
 5. Start the app:
    ```bash
    npm run dev

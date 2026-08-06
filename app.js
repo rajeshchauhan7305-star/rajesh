@@ -3,6 +3,7 @@ const session = require('express-session');
 const path = require('path');
 require('dotenv').config();
 
+const db = require('./config/database');
 const authRoutes = require('./routes/auth');
 const studentRoutes = require('./routes/student');
 const teacherRoutes = require('./routes/teacher');
@@ -74,4 +75,13 @@ const startServer = (port) => {
   });
 };
 
-startServer(requestedPort);
+(async () => {
+  try {
+    await db.query('SELECT 1');
+    startServer(requestedPort);
+  } catch (err) {
+    console.error('Unable to connect to MySQL. Check that the server is running and validate DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, and DB_NAME in .env.');
+    console.error(err.message);
+    process.exit(1);
+  }
+})();
