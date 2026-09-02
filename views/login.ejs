@@ -32,6 +32,12 @@
                   <div class="alert alert-info">Student access selected</div>
                 <% } %>
               <% } %>
+              <div class="d-grid gap-2 mb-4">
+                <a href="/auth/login?role=admin" class="btn btn-dark"><i class="fas fa-user-shield me-2"></i>Admin Login</a>
+                <a href="/auth/login?role=teacher" class="btn btn-secondary"><i class="fas fa-chalkboard-user me-2"></i>Teacher Login</a>
+                <a href="/auth/login?role=student" class="btn btn-info"><i class="fas fa-user-graduate me-2"></i>Student Login</a>
+              </div>
+              <hr class="my-4" />
               <form action="/auth/login" method="post">
                 <div class="mb-3">
                   <label class="form-label">Email</label>
