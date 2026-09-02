@@ -1,7 +1,15 @@
+import os
 from pathlib import Path
-import subprocess
 
 ROOT = Path(__file__).resolve().parent
 
 if __name__ == "__main__":
-    subprocess.run(["npm", "start"], cwd=ROOT, check=False)
+    os.chdir(ROOT)
+    import app
+    debug_mode = os.getenv('FLASK_DEBUG', '0').lower() in ('1', 'true', 'yes')
+    app.app.run(
+        host=os.getenv('HOST', '0.0.0.0'),
+        port=int(os.getenv('PORT', '3002')),
+        debug=debug_mode,
+        use_reloader=debug_mode,
+    )

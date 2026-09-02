@@ -1,1 +1,6 @@
-# No external packages required for the analytics module.
+Flask==3.0.3
+Flask-Session==0.8.0
+mysql-connector-python==9.0.0
+bcrypt==4.1.2
+python-dotenv==1.0.1
+pytest==8.3.3
