@@ -1,6 +1,6 @@
 # EduSubmit
 
-EduSubmit is a modern assignment submission portal for students and teachers built with Node.js, Express, MySQL, Bootstrap, and EJS.
+EduSubmit is a modern assignment submission portal for students and teachers built with Python, Flask, MySQL, Bootstrap, and Jinja templates.
 
 ## Features
 - Student registration/login
@@ -11,14 +11,14 @@ EduSubmit is a modern assignment submission portal for students and teachers bui
 - Responsive UI
 
 ## Requirements
-- Node.js 18+
+- Python 3.10+
 - MySQL 8+
 
 ## Installation
 1. Clone the project
-2. Install dependencies:
+2. Install Python dependencies:
    ```bash
-   npm install
+   pip install -r python/requirements.txt
    ```
 3. Create a MySQL database and import the SQL file:
    ```bash
@@ -27,10 +27,12 @@ EduSubmit is a modern assignment submission portal for students and teachers bui
 4. Update the .env file with your MySQL credentials.
    - If MySQL is running locally, set `DB_HOST=127.0.0.1` and `DB_PORT=3306`.
    - If you see socket errors, try `DB_HOST=127.0.0.1` instead of `localhost`.
-5. Start the app:
+5. Start the Python backend:
    ```bash
-   npm run dev
+   python3 run.py
    ```
+
+The application is available at `http://localhost:3000`. `npm start` also runs the Python backend for environments that use the existing npm start command.
 
 ## Default Credentials
 - Admin: admin@example.com / password123
@@ -38,11 +40,9 @@ EduSubmit is a modern assignment submission portal for students and teachers bui
 - Student: student@example.com / password123
 
 ## Folder Structure
-- app.js
-- routes/
-- controllers/
-- middleware/
-- views/
+- app.py
+- run.py
+- templates/
 - public/
 - uploads/
 - sql/

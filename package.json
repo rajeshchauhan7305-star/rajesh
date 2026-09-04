@@ -1,11 +1,11 @@
 {
   "name": "edusubmit",
   "version": "1.0.0",
-  "description": "EduSubmit – Smart Assignment & Practical Submission Portal",
-  "main": "app.js",
+  "description": "EduSubmit - Smart Assignment & Practical Submission Portal",
+  "main": "run.py",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "python3 run.py",
+    "dev": "FLASK_DEBUG=1 python3 run.py"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

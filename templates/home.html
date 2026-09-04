@@ -24,6 +24,12 @@
             <a href="#features" class="btn btn-outline-light btn-sm">Features</a>
             <a href="#stats" class="btn btn-outline-light btn-sm">Why Us</a>
             <a href="{{ url_for('auth_login') }}" class="btn btn-outline-light btn-sm">Login</a>
+            <a href="{{ url_for('auth_login', role='teacher') }}" class="btn btn-outline-light btn-sm">
+              <i class="fas fa-chalkboard-teacher me-1"></i>Teacher
+            </a>
+            <a href="{{ url_for('auth_login', role='admin') }}" class="btn btn-warning btn-sm fw-bold">
+              <i class="fas fa-user-shield me-1"></i>Admin
+            </a>
             <a href="{{ url_for('auth_register') }}" class="btn btn-light btn-sm fw-bold">Get Started</a>
           </div>
         </div>
@@ -46,6 +52,15 @@
               </a>
               <a href="#features" class="btn btn-outline-primary btn-lg">
                 <i class="fas fa-arrow-down me-2"></i>Learn More
+              </a>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+              <span class="text-muted small me-1">Quick login:</span>
+              <a href="{{ url_for('auth_login', role='teacher') }}" class="btn btn-outline-secondary btn-sm">
+                <i class="fas fa-chalkboard-teacher me-1"></i>Teacher
+              </a>
+              <a href="{{ url_for('auth_login', role='admin') }}" class="btn btn-outline-dark btn-sm">
+                <i class="fas fa-user-shield me-1"></i>Admin
               </a>
             </div>
             <div class="row g-3 text-center">
