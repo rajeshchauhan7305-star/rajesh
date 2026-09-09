@@ -34,6 +34,8 @@ def create_app():
         if 'user' not in session:
             return render_template('home.html')
         user = session['user']
+        if user['role'] == 'admin':
+            return redirect(url_for('admin_dashboard'))
         if user['role'] == 'teacher':
             return redirect(url_for('teacher_dashboard'))
         return redirect(url_for('student_dashboard'))
